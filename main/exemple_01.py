@@ -24,23 +24,7 @@ class home :
 
     @app.route('/', methods = ["GET","POST"]) # page d'aceuiller
     def loads_login_page():
-
-        if request.method == "":
-
-            name = request.form.get('name')
-            passewords = request.form.get('passewords')
-
-            print(name, " : ", passewords)
-
-        return make_response(render_template('index.html'))
-
-
-    
-    @app.route("/home", methods = ["GET","POST"])
-
-    def homepage():
-        return make_response(render_template('home.html'))
-        
+        return make_response(render_template('index.html'))   
 
 
 if __name__ == "__main__":

@@ -11,22 +11,15 @@ app = Flask(__name__, template_folder=f"{script_dir}/../templates", static_folde
 
 # class htm home definition 
 
-class home :
-    
+class home :  
     def __init__(self) -> None:
-
-        # initialisation de valeur 
-        
+        # initialisation de valeur        
         home.__init__(self)
         self.home_title = "Alice deco"
         self.home_page = {}
-
-
     @app.route('/', methods = ["GET","POST"]) # page d'aceuiller
     def loads_login_page():
         return make_response(render_template('index.html'))   
-
-
 if __name__ == "__main__":
 
     app.config.update(ENV="development", DEBUG=True)

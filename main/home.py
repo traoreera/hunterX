@@ -18,8 +18,16 @@ class home :
         self.home_title = "Alice deco"
         self.home_page = {}
     @app.route('/', methods = ["GET","POST"]) # page d'aceuiller
-    def loads_login_page():
-        return make_response(render_template('index.html'))   
+    def previsualisation():
+        return make_response(render_template('slide.html'))
+
+
+    @app.route('/home')
+    def home():
+
+        return make_response(render_template('home.html'))
+
+        
 if __name__ == "__main__":
 
     app.config.update(ENV="development", DEBUG=True)

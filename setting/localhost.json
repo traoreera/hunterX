@@ -1,0 +1,1 @@
+{"user":{"name":"hunter","os":"ubuntu server","passewords": ""},"host":{"ip adresse":"192.168.1.2","virtualhost":"localhost","port": "80","server":"apache2"},"config":{"name site": "hunterssecurity.com","alias":"www.hunterssecurity.com","conf" : "script_dir"},"ssh":{"port":"1234","user":"hunters","passeword":""}}

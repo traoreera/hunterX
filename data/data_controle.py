@@ -1,32 +1,35 @@
-import sqlite3 as sql
+import sqlite3 as sq
 import os
 from rich.console import Console as console
+import getpass
 
-class creating:
+class secure_request:
 
     def __init__(self) -> None:
-        creating.__init__(self)
-
-        self.data = "data.db"
-        self.dir = "/data"
-        self.pwd= "{%d,%d,%s} login filead ..."
-
-    def verificatioN(self):
-        # verification
-        if os.path.exists("data.sqlite") : 
-
-
-            console.log("database already exist ...") # verification de la base de donne
-            connection = sql.connect('data.sql')
-            curseur = connection.cursor()
-
-            try : curseur.execute("select * from information")
-
-            except Exception :
-                console.log("imposible de se connecte a la base de donnes [?] ...")
+        secure_request.__init__(self)        
+    def secure_load(name,password):
+            try:
+                connection = sq.connect("data/data.db")
+                curseur = connection.cursor()
                 
-        else :
+                request1 = f"""select user_name from information where user_name = "{name}" """
+                request = f"""select passwords from information where passwords = "{password}" """
 
-            console.log()
-            print("Vous avez suprimmer la base de donnes fichier innexsistant [!]")
-        
+                result = curseur.execute(request1)
+                for i in result :
+                    names = list(i)
+                    for i in names : names = i
+                while names!=name : name = input("user name > ")
+
+                result2 = curseur.execute(request)
+                for j in result2:
+                    code = list(j)
+                    for i in code : code = i
+                while code!= password: getpass.getpass("password > ")
+                    
+            except Exception as e : print(e)
+
+            connection.close()
+    
+    def __integrity__(self):
+        pass

@@ -1,1 +1,40 @@
-{"user":{"name":"hunter","os":"ubuntu server","passewords": ""},"host":{"ip adresse":"192.168.1.2","virtualhost":"localhost","port": "80","server":"apache2"},"config":{"name site": "hunterssecurity.com","alias":"www.hunterssecurity.com","conf" : "script_dir"},"ssh":{"port":"1234","user":"hunters","passeword":""}}
+{
+        "user":
+        {
+            "name":"hunter",
+            "os":"ubuntu server",
+            "passewords": ""
+        },
+
+    "host":
+        {
+            "ip adresse":"192.168.1.2",
+            "virtualhost":"localhost",
+            "port": "80",
+            "server":"apache2"
+        },
+
+    "config":
+        {
+            "name site": "hunterssecurity.com",
+            "alias":"www.hunterssecurity.com",
+            "conf" :"/etc/apache2/hunters.com.conf"
+        },
+
+    "ssh":
+        {
+            "port":"1234",
+            "user":"hunters",
+            "passeword":"",
+            "command":"hunters@192.168.1.2 -p 1234"
+            },
+
+    "dosier_filles":
+    {
+        "static":
+        {
+            "img":"/static/img",
+            "local":"install"
+        }
+    }
+    }

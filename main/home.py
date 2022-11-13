@@ -25,7 +25,7 @@ class home :
         payload={}
         headers = {}
         response = requests.request("PATCH", url, headers=headers, data=payload)
-        print(response.text)
+        print("server reponse ok [200]")
         return make_response(render_template('slide.html'))
 
 

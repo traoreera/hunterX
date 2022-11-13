@@ -19,6 +19,13 @@ class home :
         self.home_page = {}
     @app.route('/', methods = ["GET","POST"]) # page d'aceuiller
     def previsualisation():
+        
+        import requests
+        url = "http://127.0.0.1:5000"
+        payload={}
+        headers = {}
+        response = requests.request("PATCH", url, headers=headers, data=payload)
+        print(response.text)
         return make_response(render_template('slide.html'))
 
 
@@ -33,3 +40,5 @@ if __name__ == "__main__":
     app.config.update(ENV="development", DEBUG=True)
 
     app.run()
+    
+    
